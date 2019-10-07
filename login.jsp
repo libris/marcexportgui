@@ -7,6 +7,7 @@
         
         if (properties.getProperty("password", "").equals(request.getParameter("password"))) {
 		request.getSession().setAttribute("group", request.getParameter("group"));
+		request.getSession().setAttribute("admin", "");
 		response.sendRedirect("showprofile.jsp?operation=listfiles&name=" + request.getParameter("group"));
 	} else if (prop.getProperty("password", "").equals(request.getParameter("password"))) {
 		// adminpass
