@@ -56,6 +56,7 @@
                         &nbsp;&nbsp;<input type="checkbox" name="efilter" <% if (properties.getProperty("efilter", "").equalsIgnoreCase("ON")) out.print("checked=\"checked\""); %>/>e-resurser
                         &nbsp;&nbsp;<input type="checkbox" name="biblevel" <% if (properties.getProperty("biblevel", "").equalsIgnoreCase("ON")) out.print("checked=\"checked\""); %>/>prel. info
                         &nbsp;&nbsp;<input type="checkbox" name="licensefilter" <% if (properties.getProperty("licensefilter", "").equalsIgnoreCase("ON")) out.print("checked=\"checked\""); %>/>licens-poster
+                          <input type="checkbox" name="fictionfilter" <% if (properties.getProperty("fictionfilter", "").equalsIgnoreCase("ON")) out.print("checked=\"checked\""); %>/>skönlitteratur
                     </td>
                 </tr>
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>

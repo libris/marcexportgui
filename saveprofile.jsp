@@ -9,7 +9,7 @@
         }
         
         // fix checkboxes
-        String checkboxes[] = {"bibcreate", "bibupdate", "authcreate", "authupdate", "holdcreate", "holdupdate", "holddelete","generatesab","generatedewey", "sab", "lcsh", "isbndehyphenate", "issndehyphenate", "isbnhyphenate", "issnhyphenate", "efilter", "biblevel", "move0359", "move240to244", "licensefilter" };
+        String checkboxes[] = {"bibcreate", "bibupdate", "authcreate", "authupdate", "holdcreate", "holdupdate", "holddelete","generatesab","generatedewey", "sab", "lcsh", "isbndehyphenate", "issndehyphenate", "isbnhyphenate", "issnhyphenate", "efilter", "biblevel", "move0359", "move240to244", "licensefilter", "fictionfilter" };
         for (String str: checkboxes) {
             if (request.getParameter(str) == null) properties.setProperty(str, "off");
         }
