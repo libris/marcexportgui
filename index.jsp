@@ -97,7 +97,7 @@
             <table width="100%">
                 <tr height="300">
                     <td height="100%" align="center" valign="middle">
-                        <form method="GET" action="login.jsp">
+                        <form method="POST" action="login.jsp">
                         <table>
                             <tr>
                                 <td class="default">exportgrupp:</td>
