@@ -1,3 +1,4 @@
+<%@include file="util.jsp"%>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -43,20 +44,8 @@
                 <td colspan="6" height="1"></td>
             </tr>
 <%
-            java.util.Properties prop = new java.util.Properties();
-            prop.load(new java.io.FileInputStream(new java.io.File(application.getRealPath("/exportgui.properties"))));
-            java.io.File files[] =  new java.io.File(prop.getProperty("ProfileDir")).listFiles();
-
-            java.util.Map<String, java.util.Properties> fileMap = new java.util.TreeMap<String, java.util.Properties>();
-            for (java.io.File f: files) {
-                if (f.getName().endsWith(".properties")) {
-                    java.util.Properties properties = new java.util.Properties();
-                    properties.load(new java.io.FileInputStream(f));
-                    fileMap.put(properties.getProperty("longname"), properties);
-                }
-            }
-            
-            for (java.util.Properties properties: fileMap.values()) {
+            Map<String, Properties> fileMap = loadAllProfiles();
+            for (Properties properties: fileMap.values()) {
 %>
             <tr>
                 <td nowrap class="default">&nbsp;<a href="editprofile.jsp?name=<%out.print(properties.getProperty("name"));%>"><%out.print(properties.getProperty("name"));%></a>&nbsp;</td>
@@ -80,19 +69,8 @@
         </form>
         <%  } else if (request.getSession().getAttribute("group") != null) {
                 response.sendRedirect("showprofile.jsp?name=" + request.getSession().getAttribute("group"));
-            } else { 
-                java.util.Properties prop = new java.util.Properties();
-                prop.load(new java.io.FileInputStream(new java.io.File(application.getRealPath("/exportgui.properties"))));
-                java.io.File files[] =  new java.io.File(prop.getProperty("ProfileDir")).listFiles();
-
-                java.util.Map<String, java.util.Properties> fileMap = new java.util.TreeMap<String, java.util.Properties>();
-                for (java.io.File f: files) {
-                    if (f.getName().endsWith(".properties")) {
-                        java.util.Properties properties = new java.util.Properties();
-                        properties.load(new java.io.FileInputStream(f));
-                        fileMap.put(properties.getProperty("longname"), properties);
-                    }
-                }
+            } else {
+                Map<String, Properties> fileMap = loadAllProfiles();
 %>
             <table width="100%">
                 <tr height="300">
@@ -104,7 +82,7 @@
                                 <td>
                                     <select name="group">
 <%
-                                    for (java.util.Properties properties: fileMap.values()) {
+                                    for (Properties properties: fileMap.values()) {
 %>
                                         <option value="<%out.print(properties.getProperty("name"));%>"><%out.print(properties.getProperty("longname"));%></option>
 <%

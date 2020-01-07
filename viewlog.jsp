@@ -1,16 +1,15 @@
+<%@include file="util.jsp"%>
 <%@page contentType="text/plain"%>
 <%@page pageEncoding="UTF-8"%>
 
 <%
-        java.util.Properties prop = new java.util.Properties();
-        prop.load(new java.io.FileInputStream(new java.io.File(application.getRealPath("/exportgui.properties"))));
-        java.io.File file = new java.io.File(prop.getProperty("HomeDir") + "/files/" + request.getParameter("name") + "/logs/" + request.getParameter("filename"));
-        java.io.FileInputStream is = new java.io.FileInputStream(file);
-        java.io.OutputStream os = response.getOutputStream();
-        
-        int n=0;
-        while ((n = is.read()) != -1) {
-            os.write(n);
+        File file = new File(getLogDir(request.getParameter("name")), request.getParameter("filename"));
+
+        OutputStream os = response.getOutputStream();
+        try (FileInputStream is = new FileInputStream(file)) {
+            int n=0;
+            while ((n = is.read()) != -1) {
+                os.write(n);
+            }
         }
-        is.close();
 %>

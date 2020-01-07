@@ -1,10 +1,6 @@
-<% 
-        java.util.Properties properties = new java.util.Properties();
-        java.util.Properties prop = new java.util.Properties();
-        prop.load(new java.io.FileInputStream(new java.io.File(application.getRealPath("/exportgui.properties"))));
-        java.io.File file = new java.io.File(prop.getProperty("ProfileDir") + java.io.File.separatorChar + request.getParameter("group") + ".properties");
-        properties.load(new java.io.FileInputStream(file));
-        
+<%@include file="util.jsp"%>
+<%
+        Properties properties = loadProfile(request.getParameter("group"));
         if (properties.getProperty("password", "").equals(request.getParameter("password"))) {
 		request.getSession().setAttribute("group", request.getParameter("group"));
 		request.getSession().setAttribute("admin", "");
