@@ -8,6 +8,7 @@
 <%@ page import="java.util.TreeMap" %>
 <%@ page import="java.io.IOException" %>
 <%@ page import="javax.servlet.ServletContext" %>
+<%@ page import="java.util.Comparator" %>
 <%!
     private static final String PROFILE_DIR = "ProfileDir";
     private static final String HOME_DIR = "HomeDir";
@@ -36,7 +37,13 @@
         public Map loadAllProfiles() throws IOException {
             File files[] = getProfilesDir().listFiles();
 
-            Map<String, Properties> profiles = new TreeMap<String, Properties>();
+            Map<String, Properties> profiles = new TreeMap<String, Properties>(new Comparator<String>() {
+                @Override
+                public int compare(String s1, String s2) {
+                    return s1 != null ? s1.compareToIgnoreCase(s2) : 0;
+                }
+            });
+
             for (File f : files) {
                 if (f.getName().endsWith(".properties")) {
                     Properties profile = loadProperties(f);
