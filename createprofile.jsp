@@ -1,3 +1,4 @@
+<%@include file="util.jsp"%>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -5,13 +6,11 @@
 <c:if test="${not empty param.shortname and not empty param.longname}">
     <%
     try {
-        java.util.Properties properties = new java.util.Properties();
-        java.util.Properties prop = new java.util.Properties();
-        prop.load(new java.io.FileInputStream(new java.io.File(application.getRealPath("/exportgui.properties"))));
-        java.io.File file = new java.io.File(prop.getProperty("ProfileDir") + java.io.File.separatorChar + request.getParameter("shortname") + ".properties");
+        Properties properties = new Properties();
         properties.setProperty("name", request.getParameter("shortname"));
         properties.setProperty("longname", request.getParameter("longname"));
-        properties.store(new java.io.FileOutputStream(file), null);
+        getStore(application).storeProfile(properties);
+
         request.getSession().setAttribute("group", request.getParameter("shortname"));
         response.sendRedirect("showprofile.jsp?operation=editprofile&name=" + request.getParameter("shortname"));
     } catch (Exception e) {%>
