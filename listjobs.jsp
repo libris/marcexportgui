@@ -1,13 +1,12 @@
+<%@include file="util.jsp"%>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="logincheck.jsp"%>
 
 <%
-        java.util.Properties prop = new java.util.Properties();
-        prop.load(new java.io.FileInputStream(new java.io.File(application.getRealPath("/exportgui.properties"))));
-        java.io.File jobDir = new java.io.File(prop.getProperty("HomeDir") + "/jobs/incoming");
-        java.io.File files[] = new java.io.File[0];
+        File jobDir = getStore(application).getJobsDir();
+        File[] files = new File[0];
         
         if (jobDir.exists()) {
             files = jobDir.listFiles();
@@ -31,11 +30,8 @@
                 return (p1.getProperty("year") + p1.getProperty("month") + p1.getProperty("day_in_month")).compareTo((p2.getProperty("year") + p2.getProperty("month") + p2.getProperty("day_in_month")));
             }});
             
-        for (java.io.File f: files) {
-            java.util.Properties p = new java.util.Properties();
-            java.io.InputStream os = new java.io.FileInputStream(f);
-            p.load(os);
-            os.close();
+        for (File f: files) {
+            Properties p = loadProperties(f);
             
             if (p.getProperty("name").equals(request.getParameter("name"))) {
                 set.add(p);

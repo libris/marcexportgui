@@ -1,3 +1,4 @@
+<%@include file="util.jsp"%>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <html>
@@ -13,13 +14,8 @@
         for (String str: checkboxes) {
             if (request.getParameter(str) == null) properties.setProperty(str, "off");
         }
-        
-        java.util.Properties prop = new java.util.Properties();
-        prop.load(new java.io.FileInputStream(new java.io.File(application.getRealPath("/exportgui.properties"))));
-        java.io.File file = new java.io.File(prop.getProperty("ProfileDir") + java.io.File.separatorChar + request.getParameter("name") + ".properties");
-        java.io.OutputStream os = new java.io.FileOutputStream(file);
-        properties.store(os, null);
-        os.close();
+
+        getStore(application).storeProfile(properties);
                 
         response.sendRedirect("/exportgui");
     %>

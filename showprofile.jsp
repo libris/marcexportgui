@@ -31,37 +31,31 @@
                 <td width="100%" valign="top">
                     <c:choose>
                         <c:when test="${param.operation == 'editprofile'}">
-                            <%@include file="editprofile.jsp"%>
+                            <jsp:include page="editprofile.jsp" />
                         </c:when>
                         <c:when test="${param.operation == 'listfiles'}">
-                            <%@include file="listfiles.jsp"%>
+                            <jsp:include page="listfiles.jsp" />
                         </c:when>
                         <c:when test="${param.operation == 'changepassword'}">
-                            <%@include file="password.jsp"%>
+                            <jsp:include page="password.jsp" />
                         </c:when>
                         <c:when test="${param.operation == 'editsab'}">
-                            <%@include file="editsab.jsp"%>
+                            <jsp:include page="editsab.jsp" />
                         </c:when>
                         <c:when test="${param.operation == 'createprofile'}">
-                            <%@include file="createprofile.jsp"%>
+                            <jsp:include page="createprofile.jsp" />
                         </c:when>
-                        <%-- <c:when test="${param.operation == 'testprofile'}">
-                            <%@include file="testprofile.jsp"%>
-                        </c:when> --%>
                         <c:when test="${param.operation == 'chooseprofile'}">
-                            <%@include file="chooseprofile.jsp"%>
+                            <jsp:include page="chooseprofile.jsp" />
                         </c:when>
-                        <%-- <c:when test="${param.operation == 'getrecord'}">
-                            <%@include file="getrecord.jsp"%>
-                        </c:when> --%>
                         <c:when test="${param.operation == 'addjob'}">
-                            <%@include file="addjob.jsp"%>
+                            <jsp:include page="addjob.jsp" />
                         </c:when>
                         <c:when test="${param.operation == 'fulldump'}">
-                            <%@include file="fulldump.jsp"%>
+                            <jsp:include page="fulldump.jsp" />
                         </c:when>
                         <c:when test="${param.operation == 'listjobs'}">
-                            <%@include file="listjobs.jsp"%>
+                            <jsp:include page="listjobs.jsp" />
                         </c:when>
                         <c:otherwise>
                         </c:otherwise>
