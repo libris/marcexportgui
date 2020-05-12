@@ -235,7 +235,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras närmaste följande helg.</font></td>
+                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras närmast följande helg.</font></td>
                 </tr>
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>                
                 <tr bgcolor="#dfdfdf">
