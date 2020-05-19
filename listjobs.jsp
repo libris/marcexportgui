@@ -41,7 +41,7 @@
 
         for (java.util.Properties p: set) { %>
             <tr>
-                <td class="default">&nbsp;<% if (p.getProperty("exporttype", "").equals("fulldump")) { out.println("kommande helg"); } else { out.print(p.getProperty("year") + "-" + p.getProperty("month") + "-" + p.getProperty("day_in_month")); }%></td>
+                <td class="default">&nbsp;<% out.println("kommande helg"); }%></td>
                 <td class="default"><% if (p.getProperty("exporttype", "").equals("fulldump")) { out.println("fullständigt uttag"); } else { out.print(p.getProperty("start") + " -> " + p.getProperty("stop")); }%></td>
                 <td class="default"><a href="deletejob.jsp?name=${param.name}&jobid=<% out.print(p.getProperty("filename")); %>">ta bort</td>
             </tr>
