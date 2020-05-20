@@ -113,48 +113,8 @@
                 <tr bgcolor="#dfdfdf">
                     <td colspan="2" class="default"><b>&nbsp;tidpunkt för export</b></td>
                 </tr>
-                <!--<tr>
-                    <td class="default" colspan="2">
-                        &nbsp;&nbsp;år:&nbsp;
-                        <select name="year">
-                            <option value="1970">välj år</option>
-                            <option value="2005">2005</option>
-                            <option value="2006">2006</option>
-                            <option value="2007">2007</option>
-                            <option value="2008">2008</option>
-                            <option value="2009">2009</option>
-                            <option value="2010">2010</option>
-                            <option value="2011">2011</option>
-                            <option value="2012">2012</option>
-                            <option value="2013">2013</option>
-                            <option value="2014">2014</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                        </select>
-                        &nbsp;&nbsp;månad:&nbsp;
-                        <select name="month">
-                            <option value="01">välj månad</option>
-                            <option value="01">januari</option>
-                            <option value="02">february</option>
-                            <option value="03">mars</option>
-                            <option value="04">april</option>
-                            <option value="05">maj</option>
-                            <option value="06">juni</option>
-                            <option value="07">juli</option>
-                            <option value="08">augusti</option>
-                            <option value="09">september</option>
-                            <option value="10">oktober</option>
-                            <option value="11">november</option>
-                            <option value="12">december</option>
-                        </select>
-                        <input type="hidden" name="day_in_month" value="*">
-                        <input type="hidden" name="day_in_week" value="Sat">
-                    </td>
-                </tr>-->
                 <tr>
-                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Fullständiga uttag görs varje natt</font></td>
+                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras nästkommande helg</font></td>
                 </tr>
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>                
                 <tr bgcolor="#dfdfdf">
