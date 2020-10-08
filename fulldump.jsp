@@ -114,43 +114,10 @@
                     <td colspan="2" class="default"><b>&nbsp;tidpunkt för export</b></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras nästkommande helg</font></td>
+                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras nästkommande helg (i mappen '/pub/export2/<% out.print(request.getParameter("name")); %>/marc/user-ordered-export.marc')</font></td>
                 </tr>
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>                
-                <tr bgcolor="#dfdfdf">
-                    <td colspan="2" class="default"><b>&nbsp;leverans</b></td>
-                </tr>
-                <tr class="default">
-                    <td colspan="2">
-                        &nbsp;&nbsp;<input type="radio" name="delivery_type" value="LIBRISFTP" <% if (properties.getProperty("delivery_type", "LIBRISFTP").equalsIgnoreCase("LIBRISFTP")) out.print("checked=\"checked\""); %>>LIBRIS FTP-server (i mappen '/pub/export2/<% out.print(request.getParameter("name")); %>/marc')
-                        &nbsp;&nbsp;<input type="radio" name="delivery_type" value="EXTFTP" <% if (properties.getProperty("delivery_type", "").equalsIgnoreCase("EXTFTP")) out.print("checked=\"checked\""); %>>egen FTP-server (fyll i nedan)
-                    </td>
-                </tr>
-                <tr class="default">
-                    <td>&nbsp;&nbsp;server:</td><td><input name="ftpserver" value="<% out.print(properties.getProperty("ftpserver", "")); %>"></td>
-                </tr>
-                <tr class="default">
-                    <td>&nbsp;&nbsp;användare:</td><td><input name="ftpuser" value="<% out.print(properties.getProperty("ftpuser", "")); %>"></td>
-                </tr>
-                <tr class="default">    
-                    <td>&nbsp;&nbsp;lösenord:</td><td><input name="ftppassword" value="<% out.print(properties.getProperty("ftppassword", "")); %>"></td>
-                </tr>
-                <tr class="default">    
-                    <td>&nbsp;&nbsp;katalog:</td><td><input name="ftpdirectory" value="<% out.print(properties.getProperty("ftpdirectory", "")); %>"></td>
-                </tr>
-                <tr><td colspan="2" class="default">&nbsp;</td></tr>
-                <tr bgcolor="#dfdfdf">
-                    <td colspan="2" class="default"><b>&nbsp;e-post</b></td>
-                </tr>
-                <tr>
-                    <td nowrap class="default">&nbsp;&nbsp;statusrapport till:</td>
-                    <td><input type="text" size="30" name="contact" value="<% out.print(properties.getProperty("contact", "")); %>"/></td>
-                </tr>
-                <tr>
-                    <td nowrap class="default">&nbsp;&nbsp;felrapport till:</td>
-                    <td><input type="text" size="30" name="errcontact" value="<% out.print(properties.getProperty("errcontact", "")); %>"/></td>
-                </tr>
-                <tr><td colspan="2" class="default">&nbsp;</td></tr>
+
                 <tr>    
                     <td colspan="2" align="center"><input type="submit" value="spara">&nbsp;<input type="reset" value="återställ"></form></tr>
                 </tr>
