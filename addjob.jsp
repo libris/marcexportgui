@@ -14,7 +14,7 @@
                 </tr>
                 <tr>
                   <td colspan="2">
-                  <font color="#ff0000">OBS! Lägg inte in ett interval som är större än 6 månader. Sökningen blir då för tung och kommer inte att fungera. Använd "fullständigt uttag" i vänstermenun om det är det ni vill ha.</font></td></tr>
+                  <font color="#ff0000">OBS! Lägg inte in ett intervall som är större än 6 månader. Sökningen blir då för tung och kommer inte att fungera. Använd "fullständigt uttag" i vänstermenyn om det är det ni vill ha.</font></td></tr>
                  <tr>
                     <td nowrap class="default">&nbsp;&nbsp;start (yyyy-mm-dd):</td>
                     <td><input type="text" size="10" name="start"/></td>
