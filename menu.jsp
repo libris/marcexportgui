@@ -2,7 +2,7 @@
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
                     &nbsp;<b>batchexport</b>&nbsp;<br>
-                    &nbsp;&nbsp;-&nbsp;<a target="_new" href="https://www.kb.se/libris/Libris-metadatflode/Anvandning/Batchexport/instruktioner/">hjälp</a><br>
+                    &nbsp;&nbsp;-&nbsp;<a target="_new" href="https://www.kb.se/samverkan-och-utveckling/libris/att-anvanda-librisdata/postoverforing.html">hjälp</a><br>
                     &nbsp;&nbsp;-&nbsp;<c:if test="${param.operation == 'editprofile'}">ändra profil</c:if><c:if test="${param.operation != 'editprofile'}"><a href="showprofile.jsp?operation=editprofile&name=${param.name}">ändra profil</a></c:if><br>
  <!--                   &nbsp;&nbsp;-&nbsp;<c:if test="${param.operation == 'testprofile'}">testa profil</c:if><c:if test="${param.operation != 'testprofile'}"><a href="showprofile.jsp?operation=testprofile&name=${param.name}">testa profil</a></c:if><br> -->
                     &nbsp;&nbsp;-&nbsp;<c:if test="${param.operation == 'listfiles'}">visa filer</c:if><c:if test="${param.operation != 'listfiles'}"><a href="showprofile.jsp?operation=listfiles&name=${param.name}">visa filer</a></c:if><br>
