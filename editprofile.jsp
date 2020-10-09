@@ -169,7 +169,7 @@
                     <td colspan="2" class="default"><b>&nbsp;tidpunkt för export</b></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras nästkommande helg (i mappen '/pub/export2/<% out.print(request.getParameter("name")); %>/marc/')</font></td>
+                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttag levereras varje natt (i mappen '/pub/export2/<% out.print(request.getParameter("name")); %>/marc/')</font></td>
                 </tr>
 
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>
