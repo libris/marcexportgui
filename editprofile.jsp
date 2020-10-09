@@ -70,7 +70,7 @@
                 </tr>
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>
                 <tr bgcolor="#dfdfdf">
-                    <td colspan="2" class="default"><b>&nbsp;bearbetning</b> (<a target="_new" href="https://www.kb.se/libris/Libris-metadatflode/Anvandning/Batchexport/instruktioner/#bearbetning">förklaring</a>)</td>
+                    <td colspan="2" class="default"><b>&nbsp;bearbetning</b> (<a target="_new" href="https://www.kb.se/samverkan-och-utveckling/libris/att-anvanda-librisdata/postoverforing.html">förklaring</a>)</td>
                 </tr>
                 <tr>
                     <td class="default" colspan="2">
@@ -136,7 +136,7 @@
                 </tr>
                 <tr class="default">
                     <td>&nbsp;&nbsp;diakrithantering:</td>
-                    <td><select name="composestrategy"><option value="composelatin1" <% if (properties.getProperty("composestrategy", "").equalsIgnoreCase("composelatin1")) out.print("selected"); %>>prekomponera latin-1 subset</option><option value="compose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("compose")) out.print("selected"); %>>prekomponera alla</option><option value="decompose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("decompose")) out.print("selected"); %>>dekomponera alla</option></select> <a target="_new" href="https://www.kb.se/libris/Libris-metadatflode/Anvandning/Batchexport/instruktioner/#diakrithantering">förklaring</a></td>
+                    <td><select name="composestrategy"><option value="composelatin1" <% if (properties.getProperty("composestrategy", "").equalsIgnoreCase("composelatin1")) out.print("selected"); %>>prekomponera latin-1 subset</option><option value="compose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("compose")) out.print("selected"); %>>prekomponera alla</option><option value="decompose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("decompose")) out.print("selected"); %>>dekomponera alla</option></select> <a target="_new" href="https://www.kb.se/samverkan-och-utveckling/libris/att-anvanda-librisdata/postoverforing.html">förklaring</a></td>
                 </tr>
                 <tr class="default">
                     <td>&nbsp;&nbsp;auktoritetsposter:</td>

@@ -82,7 +82,7 @@
                 </tr>
                 <tr class="default">
                     <td>&nbsp;&nbsp;diakrithantering:</td>
-                    <td><select name="composestrategy"><option value="compose" <% if (properties.getProperty("composestrategy", "").equalsIgnoreCase("composelatin1")) out.print("selected"); %>>prekomponera latin-1 subset</option><option value="compose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("compose")) out.print("selected"); %>>prekomponera alla</option><option value="decompose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("decompose")) out.print("selected"); %>>dekomponera alla</option></select> <a target="_new" href="http://www.libris.kb.se/tjanster/teknisk_info/export_batchuttag_ny.jsp#diakrithantering">förklaring</a></td>
+                    <td><select name="composestrategy"><option value="compose" <% if (properties.getProperty("composestrategy", "").equalsIgnoreCase("composelatin1")) out.print("selected"); %>>prekomponera latin-1 subset</option><option value="compose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("compose")) out.print("selected"); %>>prekomponera alla</option><option value="decompose" <% if (properties.getProperty("composestrategy", "composelatin1").equalsIgnoreCase("decompose")) out.print("selected"); %>>dekomponera alla</option></select> <a target="_new" href="https://www.kb.se/samverkan-och-utveckling/libris/att-anvanda-librisdata/postoverforing.html">förklaring</a></td>
                 </tr>
                 <tr class="default">
                     <td>&nbsp;&nbsp;auktoritetsposter:</td>
