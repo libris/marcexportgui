@@ -164,6 +164,20 @@
     }
 %>
 
+		<tr bgcolor="#dfdfdf">
+                    <td colspan="2" class="default"><b>&nbsp;Automatisk gallring</b></td>
+                </tr>
+		<tr>
+                    <td class="default" colspan="2">
+                        &nbsp;&nbsp;<input type="checkbox" name="virtualdelete" <% if (!properties.getProperty("virtualdelete", "").equalsIgnoreCase("OFF")) out.print("checked=\"checked\""); %>/>Betrakta poster ni ej längre har bestånd på som raderade
+                    </td>
+                </tr>
+                <tr>
+		    <td class="default" colspan="2">
+		        &nbsp;&nbsp;<input type="checkbox" name="exportdeleted" <% if (properties.getProperty("exportdeleted", "").equalsIgnoreCase("ON")) out.print("checked=\"checked\""); %>/>Exportera raderade poster (markerade med 'd' i 000/05)
+		    </td>
+		</tr>
+
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>
                 <tr bgcolor="#dfdfdf">
                     <td colspan="2" class="default"><b>&nbsp;tidpunkt för export</b></td>
@@ -176,5 +190,6 @@
                 <tr>    
                     <td colspan="2" align="center"><input type="submit" value="spara">&nbsp;<input type="reset" value="återställ"></form></tr>
                 </tr>
+
             </table>
         </form>
