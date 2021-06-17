@@ -1,4 +1,5 @@
 <%@include file="util.jsp"%>
+<%@ page trimDirectiveWhitespaces="true" %>
 <%
     if (request.getParameter("file").endsWith("xml")) {
         response.setContentType("text/xml");
