@@ -39,7 +39,7 @@
                             </tr>
                             <tr>
                                 <td class="default">lösenord:</td>
-                                <td><input name="password"/></td>
+                                <td><input name="password" type="password"/></td>
                             </tr>
                             <% if (request.getParameter("error") != null) {
                                 if (request.getParameter("error").equals("invalidpassword")) { %>
