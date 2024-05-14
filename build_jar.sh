@@ -1,1 +1,1 @@
-jar cvf exportgui.war ./*.jsp ./exportgui.properties ./images ./WEB-INF ./META-INF
+jar cvf exportgui.war ./*.jsp ./images ./WEB-INF ./META-INF
