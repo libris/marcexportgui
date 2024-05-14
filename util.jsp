@@ -19,7 +19,7 @@
         String adminPassword;
 
         public Store(ServletContext application) throws IOException {
-            Properties p = loadProperties(new File(application.getRealPath("/exportgui.properties")));
+            Properties p = loadProperties(new File(application.getRealPath("/WEB-INF/exportgui.properties")));
             profileDir = p.getProperty(PROFILE_DIR);
             homeDir = p.getProperty(HOME_DIR);
             adminPassword = p.getProperty("password");
