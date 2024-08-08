@@ -39,9 +39,6 @@
                         <c:when test="${param.operation == 'changepassword'}">
                             <jsp:include page="password.jsp" />
                         </c:when>
-                        <c:when test="${param.operation == 'editsab'}">
-                            <jsp:include page="editsab.jsp" />
-                        </c:when>
                         <c:when test="${param.operation == 'createprofile'}">
                             <jsp:include page="createprofile.jsp" />
                         </c:when>
