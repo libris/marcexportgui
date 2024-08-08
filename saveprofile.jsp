@@ -1,4 +1,5 @@
 <%@include file="util.jsp"%>
+<%@include file="logincheck.jsp" %>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <html>
