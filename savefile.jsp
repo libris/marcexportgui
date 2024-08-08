@@ -1,4 +1,5 @@
 <%@include file="util.jsp"%>
+<%@include file="logincheck.jsp" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%
     if (request.getParameter("file").endsWith("xml")) {

@@ -29,11 +29,11 @@
             java.util.Properties p1 = (java.util.Properties) o1, p2 = (java.util.Properties)o2; 
                 return (p1.getProperty("year") + p1.getProperty("month") + p1.getProperty("day_in_month")).compareTo((p2.getProperty("year") + p2.getProperty("month") + p2.getProperty("day_in_month")));
             }});
-            
+
         for (File f: files) {
             Properties p = loadProperties(f);
-            
-            if (p.getProperty("name").equals(request.getParameter("name"))) {
+
+            if (p.getProperty("name", "").equals(request.getParameter("name"))) {
                 set.add(p);
                 p.setProperty("filename", f.getName());
             }

@@ -1,3 +1,4 @@
+<%@include file="logincheck.jsp"%>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -20,7 +21,6 @@
     /* if (request.getRemoteAddr().equals("127.0.0.1") || request.getRemoteAddr().startsWith("193.10.75") || request.getRemoteAddr().startsWith("192.168.3") || request.getRemoteAddr().equals("193.10.249.131") || request.getRemoteAddr().startsWith("10.50.64") || request.getRemoteAddr().startsWith("10.50.67") || request.getRemoteAddr().startsWith("10.50.71") || request.getRemoteAddr().startsWith("10.50.79") || request.getRemoteAddr().startsWith("10.50.66")) { */
 	if ( request.getSession().getAttribute("admin").equals("admin") ) {
 %>
-                    <!--&nbsp;&nbsp;-&nbsp;<a href="showprofile.jsp?operation=editsab&name=${param.name}">SAB-admin</a><br>-->
                     &nbsp;&nbsp;-&nbsp;<c:if test="${param.operation == 'createprofile'}">skapa profil</c:if><c:if test="${param.operation != 'createprofile'}"><a href="showprofile.jsp?operation=createprofile&name=${param.name}">skapa profil</a></c:if><br>
                     &nbsp;&nbsp;-&nbsp;<c:if test="${param.operation == 'chooseprofile'}">välj profil</c:if><c:if test="${param.operation != 'chooseprofile'}"><a href="showprofile.jsp?operation=chooseprofile&name=${param.name}">välj profil</a></c:if><br>
 <%      
