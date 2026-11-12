@@ -1,11 +1,12 @@
 <%@include file="logincheck.jsp" %>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <table width="100%">
     <tr height="300">
         <td height="100%" align="center" valign="middle">
             <form method="GET" action="changepassword.jsp">
-                <input type="hidden" name="name" value="${param.name}">
+                <input type="hidden" name="name" value="${fn:escapeXml(param.name)}">
             <table>
                 <tr>
                     <td class="default">nytt lösenord:</td>

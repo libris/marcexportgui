@@ -5,7 +5,8 @@
     <%
         File file = getStore(application).getJobFile(request.getParameter("jobid"));
 
-        if (file.exists()) {
+        // Only delete jobs that belong to the profile the user is logged in to.
+        if (file.isFile() && loadProperties(file).getProperty("name", "").equals(request.getParameter("name"))) {
             file.delete();
         }
         

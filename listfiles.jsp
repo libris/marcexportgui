@@ -37,10 +37,10 @@
 
         for (java.io.File f: set) { %>
             <tr>
-                <td class="default">&nbsp;<% out.print(f.getName()); %></td>
+                <td class="default">&nbsp;<% out.print(esc(f.getName())); %></td>
                 <td class="default"><% out.print(new java.util.Date(f.lastModified())); %></td>
                 <td class="default"><% out.print(f.length()); %></td>
-                <td class="default"><a href="savefile.jsp?name=<%out.print(request.getParameter("name"));%>&file=<% out.print(java.net.URLEncoder.encode(f.getName())); %>">spara</a></td>
+                <td class="default"><a href="savefile.jsp?name=<%out.print(esc(request.getParameter("name")));%>&file=<% out.print(java.net.URLEncoder.encode(f.getName())); %>">spara</a></td>
             </tr>
             <tr bgcolor="#dfdfdf">
                 <td colspan="4"><img src="images/1trans.gif"/></td>

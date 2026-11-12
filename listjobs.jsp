@@ -2,6 +2,7 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@include file="logincheck.jsp"%>
 
 <%
@@ -43,7 +44,7 @@
             <tr>
                 <td class="default">&nbsp;<% out.println("kommande helg"); %></td>
                 <td class="default"><% if (p.getProperty("exporttype", "").equals("fulldump")) { out.println("fullständigt uttag"); } else { out.print(p.getProperty("start") + " -> " + p.getProperty("stop")); }%></td>
-                <td class="default"><a href="deletejob.jsp?name=${param.name}&jobid=<% out.print(p.getProperty("filename")); %>">ta bort</td>
+                <td class="default"><a href="deletejob.jsp?name=${fn:escapeXml(param.name)}&jobid=<% out.print(esc(p.getProperty("filename"))); %>">ta bort</td>
             </tr>
             <tr bgcolor="#dfdfdf">
                 <td colspan="4"><img src="images/1trans.gif"/></td>

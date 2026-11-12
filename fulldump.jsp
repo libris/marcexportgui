@@ -6,7 +6,7 @@
         Properties properties = getStore(application).loadProfile(request.getParameter("name"));
     %>    
         <form action="addjob2.jsp">
-            <input type="hidden" name="name" value="<% out.print(properties.getProperty("name", "")); %>">
+            <input type="hidden" name="name" value="<% out.print(esc(properties.getProperty("name", ""))); %>">
             <input type="hidden" name="exporttype" value="fulldump">
             <table width="100%">
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>
@@ -15,7 +15,7 @@
                 </tr>
                 <tr>
                     <td class="default">&nbsp;&nbsp;begränsa sigler:</td>
-                    <td><input type="text" size="50" name="locations" value="<% out.print(properties.getProperty("locations", "")); %>"/></td>
+                    <td><input type="text" size="50" name="locations" value="<% out.print(esc(properties.getProperty("locations", ""))); %>"/></td>
                 </tr>
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>
             <tr bgcolor="#dfdfdf">
@@ -39,7 +39,7 @@
                 </tr>
                 <tr>
                     <td valign="top" class="default">&nbsp;&nbsp;extra beståndsfält:</td>
-                <td><input type="text" size="50" name="extrafields" value="<% out.print(properties.getProperty("extrafields", "")); %>"/></td>
+                <td><input type="text" size="50" name="extrafields" value="<% out.print(esc(properties.getProperty("extrafields", ""))); %>"/></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -114,7 +114,7 @@
                     <td colspan="2" class="default"><b>&nbsp;tidpunkt för export</b></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras nästkommande helg (i mappen '/pub/export2/<% out.print(request.getParameter("name")); %>/marc/user-ordered-export.marc')</font></td>
+                    <td colspan="2" class="default">&nbsp;<font color="#ff0000">Uttaget levereras nästkommande helg (i mappen '/pub/export2/<% out.print(esc(request.getParameter("name"))); %>/marc/user-ordered-export.marc')</font></td>
                 </tr>
                 <tr><td colspan="2" class="default">&nbsp;</td></tr>                
 

@@ -1,17 +1,24 @@
 <%@include file="util.jsp"%>
 <%
     Store store = getStore(application);
-	Properties properties = store.loadProfile(request.getParameter("group"));
-    if (properties.getProperty("password", "").equals(request.getParameter("password"))) {
-		request.getSession().setAttribute("group", request.getParameter("group"));
-		request.getSession().setAttribute("admin", "");
-		response.sendRedirect("showprofile.jsp?operation=listfiles&name=" + request.getParameter("group"));
-	} else if (store.getAdminPassword().equals(request.getParameter("password"))) {
-		// adminpass
-		request.getSession().setAttribute("group", request.getParameter("group"));
-		request.getSession().setAttribute("admin", "admin");
-		response.sendRedirect("showprofile.jsp?operation=listfiles&name=" + request.getParameter("group"));
-	} else {
-		response.sendRedirect("index.jsp?error=invalidpassword");
+    String group = request.getParameter("group");
+    String password = request.getParameter("password");
+    String role = null;
+
+    if (isValidName(group) && password != null && !password.isEmpty() && store.getProfileFile(group).isFile()) {
+        String profilePassword = store.loadProfile(group).getProperty("password", "");
+        if (!profilePassword.isEmpty() && profilePassword.equals(password)) {
+            role = "";
+        } else if (password.equals(store.getAdminPassword())) {
+            role = "admin";
+        }
+    }
+
+    if (role != null) {
+        request.getSession().setAttribute("group", group);
+        request.getSession().setAttribute("admin", role);
+        response.sendRedirect("showprofile.jsp?operation=listfiles&name=" + group);
+    } else {
+        response.sendRedirect("index.jsp?error=invalidpassword");
     }
 %>
