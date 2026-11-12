@@ -1,9 +1,10 @@
+<%@include file="util.jsp"%>
 <%@include file="logincheck.jsp" %>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 <html>
 <%
-    java.io.File files[] =  new java.io.File(application.getRealPath("/logs/" + request.getParameter("name"))).listFiles();
+    java.io.File files[] =  new java.io.File(application.getRealPath("/logs/" + requireValidName(request.getParameter("name")))).listFiles();
 %>
     <head>
         <title>visa loggar</title>
@@ -21,7 +22,7 @@
                 <td></td>
             </tr>
         </table>
-        <p class="rubrik">exportadministration (<% out.print(request.getParameter("name")); %>)</p>    
+        <p class="rubrik">exportadministration (<% out.print(esc(request.getParameter("name"))); %>)</p>    
         <table cellpadding="0" cellspacing="0" width="700">
             <tr bgcolor="#000000">
                 <td colspan="6" height="1"></td>
@@ -53,11 +54,11 @@
                 reader.close();
 %>
             <tr class="default">
-                <td nowrap align="center">&nbsp;<% out.print(s[0]); %>&nbsp;</td>
-                <td nowrap align="center">&nbsp;<% out.print(s[1]); %>&nbsp;</td>
-                <td nowrap align="center">&nbsp;<% out.print(s[2]); %>&nbsp;</td>
-                <td nowrap align="center">&nbsp;<a href="viewlog.jsp?name=<%out.print(s[0]);%>&logname=<%out.print(f.getName());%>"><% out.print(s[3]); %></a>&nbsp;</td>
-                <td nowrap align="center">&nbsp;<% out.print(s[4]); %>&nbsp;</td>
+                <td nowrap align="center">&nbsp;<% out.print(esc(s[0])); %>&nbsp;</td>
+                <td nowrap align="center">&nbsp;<% out.print(esc(s[1])); %>&nbsp;</td>
+                <td nowrap align="center">&nbsp;<% out.print(esc(s[2])); %>&nbsp;</td>
+                <td nowrap align="center">&nbsp;<a href="viewlog.jsp?name=<%out.print(esc(s[0]));%>&logname=<%out.print(esc(f.getName()));%>"><% out.print(esc(s[3])); %></a>&nbsp;</td>
+                <td nowrap align="center">&nbsp;<% out.print(esc(s[4])); %>&nbsp;</td>
             </tr>
             <tr bgcolor="#dfdfdf">
                 <td colspan="6" height="1"></td>

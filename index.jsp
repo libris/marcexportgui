@@ -30,7 +30,7 @@
 <%
                                     for (Properties properties: fileMap.values()) {
 %>
-                                        <option value="<%out.print(properties.getProperty("name"));%>"><%out.print(properties.getProperty("longname"));%></option>
+                                        <option value="<%out.print(esc(properties.getProperty("name")));%>"><%out.print(esc(properties.getProperty("longname")));%></option>
 <%
                                     }
 %>

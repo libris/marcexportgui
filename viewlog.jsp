@@ -5,7 +5,7 @@
 
 <%
         File logDir = getStore(application).getLogDir(request.getParameter("name"));
-        File file = new File(logDir, request.getParameter("filename"));
+        File file = new File(logDir, requireValidFileName(request.getParameter("filename")));
 
         OutputStream os = response.getOutputStream();
         InputStream is = new FileInputStream(file);

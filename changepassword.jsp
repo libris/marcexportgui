@@ -8,7 +8,12 @@
 <%
         Store store = getStore(application);
         Properties properties = store.loadProfile(request.getParameter("name"));
-        properties.setProperty("password", request.getParameter("password"));
+        String newPassword = request.getParameter("password");
+        if (newPassword == null || newPassword.isEmpty()) {
+            response.sendRedirect("showprofile.jsp?operation=changepassword&name=" + request.getParameter("name"));
+            return;
+        }
+        properties.setProperty("password", newPassword);
         store.storeProfile(properties);
                 
         response.sendRedirect("showprofile.jsp?operation=listfiles&name=" + request.getParameter("name"));

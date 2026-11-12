@@ -21,8 +21,8 @@
         response.sendRedirect("/exportgui");
     %>
     
-    <head><title>spara exportprofil (<% out.print(request.getParameter("name")); %>)</title></head>
+    <head><title>spara exportprofil (<% out.print(esc(request.getParameter("name"))); %>)</title></head>
     <body>
-        <% out.print(application.getRealPath("/profiles/" + request.getParameter("name") + ".properties")); %>
+        <% out.print(esc(application.getRealPath("/profiles/" + request.getParameter("name") + ".properties"))); %>
     </body>
 </html>

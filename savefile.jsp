@@ -2,16 +2,26 @@
 <%@include file="logincheck.jsp" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%
-    if (request.getParameter("file").endsWith("xml")) {
+    String fileName = request.getParameter("file");
+    if (!isValidFileName(fileName)) {
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        return;
+    }
+
+    File exportDir =  getStore(application).getExportDir(request.getParameter("name"));
+    File f = new File(exportDir, fileName);
+    if (!f.isFile()) {
+        response.sendError(HttpServletResponse.SC_NOT_FOUND);
+        return;
+    }
+
+    if (fileName.endsWith("xml")) {
         response.setContentType("text/xml");
     } else {
         response.setContentType("application/x-download");
     }
-    
-    response.setHeader("Content-Disposition", "attachment; filename=" + request.getParameter("file"));
 
-    File exportDir =  getStore(application).getExportDir(request.getParameter("name"));
-    File f = new File(exportDir, request.getParameter("file"));
+    response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
 
     InputStream in = new FileInputStream(f);
     try {
